@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+button {
+  cursor: pointer;
+  outline: none;
+
+  background: transparent;
+
+  border: 0;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
