@@ -1,0 +1,17 @@
+.button {
+  background: #00000047;
+  color: azure;
+  font-size: 14px;
+
+  border: 1px solid #1c3e7f;
+  border-radius: 20px;
+  box-shadow: 0 0 5px #376db5;
+
+  &:active {
+    box-shadow: 0 0 20px #376db5;
+  }
+
+  &:hover {
+    background: #00000059;
+  }
+}
