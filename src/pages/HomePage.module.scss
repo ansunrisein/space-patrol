@@ -1,0 +1,19 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+
+  background-image: url(/image/main.jpg);
+  background-size: cover;
+
+  padding-bottom: 10px;
+}
+
+.articles {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 320px);
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  justify-content: center;
+
+  color: azure;
+}
