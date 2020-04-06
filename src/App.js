@@ -4,14 +4,16 @@ import "normalize.css";
 import "./index.css";
 import {HomePage} from "./pages/HomePage";
 import {ArticlePage} from "./pages/ArticlePage"
+import {ArticleCreation} from "./pages/ArticleCreation";
 
 
 function App() {
     return (
         <BrowserRouter>
             <Switch>
-                <Route path="/article/:id" component={ArticlePage}/>
                 <Route exact path="/" component={HomePage}/>
+                <Route path="/create" component={ArticleCreation}/>
+                <Route path="/article/:id" component={ArticlePage}/>
             </Switch>
         </BrowserRouter>
     );
