@@ -15,13 +15,30 @@ code {
 button {
   cursor: pointer;
   outline: none;
+  user-select: none;
 
   background: transparent;
 
   border: 0;
 }
 
+img {
+  user-select: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
+}
+
+#root {
+  min-height: 100vh;
+
+  background-image: url(/image/main.jpg);
+  background-size: cover;
 }
