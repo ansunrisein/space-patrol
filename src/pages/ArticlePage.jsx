@@ -1,20 +1,31 @@
 import React from "react";
-import styles from "./ArticlePage.module.scss";
-import articles from "../resources/articles";
 import {useParams} from "react-router-dom";
+import {useArticle} from "../services/ArticleService";
+import styles from "./ArticlePage.module.scss";
+import {Error} from "./Error";
+import {Loader} from "../components/Loader";
 
 const ArticlePage = () => {
     const {id} = useParams();
 
-    const {name, text} = articles.find(e => e.id === +id);
+    const {value, pending, error} = useArticle(id);
+
+    if ((!value || error) && !pending)
+        return <Error/>;
 
     return (
-        <main className={styles.main}>
-            <header className={styles.header}>{name}</header>
-            <div className={styles.article_container}>
-                {text}
-            </div>
-        </main>
+        <main className={styles.main}>{
+            pending
+                ? <Loader/>
+                : (
+                    <>
+                        <header className={styles.header}>{value.title}</header>
+                        <div className={styles.article_container}>
+                            {value.text}
+                        </div>
+                    </>
+                )
+        }</main>
     );
 };
 
