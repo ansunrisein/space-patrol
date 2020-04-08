@@ -20,7 +20,7 @@ const HomePage = () => {
                 : (
                     <main className={styles.articles}> {
                         value.map(({_id, ...props}) => <ArticleCard key={_id} id={_id} {...props}/>)
-                    }</main>
+                    } </main>
                 )
             }
         </div>
