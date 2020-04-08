@@ -1,0 +1,12 @@
+.image {
+  grid-row: 1 / span 2;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100%;
+
+  border: 1px solid #c6ccd8;
+  box-shadow: 0 0 20px #040b1a;
+}
