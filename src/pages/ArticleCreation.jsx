@@ -1,19 +1,18 @@
 import React from "react";
 import styles from "./ArticleCreation.module.scss"
-import {content} from "../resources/ru";
+import {content, placeholder} from "../resources/ru";
 import {Button} from "../components/Button";
+import {ImageUpload} from "../components/ImageUpload";
 
 const ArticleCreation = () => (
-    <>
+    <form>
         <header className={styles.header}>
-            <div className={styles.image}> </div>
-            <input name="name" placeholder="Заголовок" className={styles.text}/>
-            <Button className={styles.button}>{content.save}</Button>
+            <ImageUpload/>
+            <input name="name" placeholder={placeholder.title} className={styles.text}/>
+            <Button type="submit" className={styles.button}>{content.save}</Button>
         </header>
-        <article className={styles.container}>
-            <textarea placeholder="Ваш текст" className={styles.article}/>
-        </article>
-    </>
+        <textarea placeholder={placeholder.text} className={styles.article_input}/>
+    </form>
 );
 
 export {ArticleCreation};
