@@ -4,9 +4,9 @@ import {Button} from "./Button";
 import styles from "./ArticleCard.module.scss";
 import {Link} from "react-router-dom";
 
-const ArticleCard = ({id, image, name}) => (
+const ArticleCard = ({id, image, title}) => (
     <article className={styles.article}>
-        <header>{name}</header>
+        <header>{title}</header>
         <img className={styles.img} src={image} alt=""/>
         <Link to={`/article/${id}`}>
             <Button className={styles.button}>{content.read}</Button>
