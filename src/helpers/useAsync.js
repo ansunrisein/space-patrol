@@ -19,6 +19,7 @@ export const useAsync = (f, auto = true, ...args) => {
     useEffect(() => {
         if (auto)
             execute(...args);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [auto, execute]);
 
     return {pending, value, error, execute};
