@@ -1,6 +1,8 @@
 .image {
   grid-row: 1 / span 2;
 
+  position: relative;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -9,4 +11,39 @@
 
   border: 1px solid #c6ccd8;
   box-shadow: 0 0 20px #040b1a;
+
+  &[dragging=true] {
+    box-shadow: inset 0 0 70px #061d3f;
+  }
+
+  &[data-pending=true] {
+    box-shadow: inset 0 0 70px #00bd18;
+    animation: image-shadow 2s infinite ease-in-out;;
+  }
+}
+
+@keyframes image-shadow {
+  from {
+    box-shadow: inset 0 0 80px #96b4d8;
+  }
+  25% {
+    box-shadow: inset 0 0 80px #c6ccd8;
+  }
+  25% {
+    box-shadow: inset 0 0 80px #a189d8;
+  }
+  to {
+    box-shadow: inset 0 0 80px #9399a4;
+  }
+}
+
+.input {
+  position: absolute;
+
+  width: 220px;
+  height: 120px;
+
+  opacity: 0;
+
+  cursor: pointer;
 }
